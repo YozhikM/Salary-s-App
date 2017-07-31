@@ -80,10 +80,10 @@
           </div>
           <div class="result">
             <h1>Calculation of your salary</h1>
-            <div class="result-line"><h2 class="calc">Per month:</h2><h2 class="resulted">{{ resulted || null }}</h2></div>
-            <div class="result-line"><h2 class="calc">Per week:</h2><h2 class="resulted"> {{ ~~(resulted / 4) || null }}</h2></div>
-            <div class="result-line"><h2 class="calc">Per day:</h2><h2 class="resulted"> {{ ~~(resulted / 23) || null }}</h2></div>
-            <div class="result-line"><h2 class="calc">Per hour:</h2><h2 class="resulted"> {{ ~~(resulted / 184) || null }}</h2></div>
+            <div class="result-line"><h2 class="calc">Per month:</h2><h2 class="resulted">{{ resulted || '0' }}</h2></div>
+            <div class="result-line"><h2 class="calc">Per week:</h2><h2 class="resulted"> {{ perWeek || '0' }}</h2></div>
+            <div class="result-line"><h2 class="calc">Per day:</h2><h2 class="resulted"> {{ perDay || '0.0' }}</h2></div>
+            <div class="result-line"><h2 class="calc">Per hour:</h2><h2 class="resulted"> {{ perHour || '0.00' }}</h2></div>
           </div>
       </div>
       </div>

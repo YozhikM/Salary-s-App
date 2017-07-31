@@ -46,6 +46,15 @@ const App = new Vue({
     resulted: function() {
       var current = this.result
       return Math.floor(current)
+    },
+    perHour: function() {      
+      return this.resulted = (this.resulted / 184).toFixed(2)
+    },
+    perMonth: function() {
+      return this.resulted = (this.resulted / 23).toFixed(1)
+    },
+    perWeek: function() {
+      return this.resulted = (this.resulted  / 4)
     }
   }
   

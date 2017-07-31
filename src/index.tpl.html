@@ -1,0 +1,93 @@
+<!doctype html>
+  <html>
+    <head>
+      <meta charset="utf-8"/>
+      <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+      <style>
+       * {
+          font-family: 'Montserrat';
+        }
+        .container {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100vw;
+          height: 88vh;
+        }
+        .container input {
+          padding: 1vw;
+          width: 50vw;
+          text-align: center;
+        }
+        input:focus {
+          text-align: center;
+          outline: #405d8e;
+        }
+        input::placeholder {
+          text-align: center;
+        }
+        input:focus::placeholder {
+          opacity: 0;
+        }
+        .buttons {
+          display: flex;
+          margin-top: 4vh;
+        }
+        button {
+          margin-right: 1vw;
+          background-color: #405d8e;
+          outline: #fff;
+          padding: 1vw;
+          cursor: pointer;
+          color: #fff;
+        }
+        .result {
+          width: 50vw;
+          display: flex;
+          margin-top: 5vh;
+          flex-direction: column;
+          background-color: #405d8e;
+        }
+        .result h1 {
+          color: #fff;
+          text-align: center;
+        }
+        .result-line {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+        .resulted {
+          padding-right: 2vw;
+          color: #fff;
+        }
+        .calc {
+          padding-left: 2vw;
+          color: #fff;
+        }
+      </style>
+    </head>
+    <body>
+      <div id="app">
+        <div class="container">
+        <input type="text" v-model="value" placeholder="Enter the amount of your salary in rubles">
+          <div class="buttons">
+        <button @click="rub()">CALCULATE</button>
+        <button @click="usd()">IN DOLLARS</button>
+        <button @click="eur()">IN EURO</button>
+        <button @click="tng()">IN TENGE</button>
+          </div>
+          <div class="result">
+            <h1>Calculation of your salary</h1>
+            <div class="result-line"><h2 class="calc">Per month:</h2><h2 class="resulted">{{ resulted || null }}</h2></div>
+            <div class="result-line"><h2 class="calc">Per week:</h2><h2 class="resulted"> {{ ~~(resulted / 4) || null }}</h2></div>
+            <div class="result-line"><h2 class="calc">Per day:</h2><h2 class="resulted"> {{ ~~(resulted / 23) || null }}</h2></div>
+            <div class="result-line"><h2 class="calc">Per hour:</h2><h2 class="resulted"> {{ ~~(resulted / 184) || null }}</h2></div>
+          </div>
+      </div>
+      </div>
+      <script src="main.js"></script>
+    </body>
+  </html>
+  

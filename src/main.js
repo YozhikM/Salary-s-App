@@ -11,12 +11,12 @@ const App = new Vue({
   },
   mounted() {
     let api =
-      "https://query.yahooapis.com/v1/public/yql?q=select+*+from+yahoo.finance.xchange+where+pair+=+%22RUBKZT,RUBUSD,RUBEUR%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=";
+      "https://www.cbr-xml-daily.ru/daily_json.js";
     let vm = this;
     axios
       .get(api)
       .then((response) => {
-        vm.data = response.data.query.results.rate;
+        vm.data = response.data.Valute;
         console.log(vm.data);
     })
       .catch((error) => {
@@ -26,18 +26,18 @@ const App = new Vue({
   methods: {
     tng: function(data) {
       this.result = "";
-      var rub = parseFloat(this.data[0].Rate);
-      this.result += this.value * rub;
+      var kzt = Number(this.data.KZT.Value);
+      this.result += (this.value / kzt) * 100;
     },
     usd: function(data) {
       this.result = "";
-      var usd = parseFloat(this.data[1].Rate);
-      this.result += this.value * usd;
+      var usd = Number(this.data.USD.Value);
+      this.result += this.value / usd;
     },
     eur: function(data) {
       this.result = "";
-      var eur = parseFloat(this.data[2].Rate);
-      this.result += this.value * eur;
+      var eur = Number(this.data.EUR.Value);
+      this.result += this.value / eur;
     },
     rub: function() {
       this.result = "";

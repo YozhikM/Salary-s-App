@@ -3,13 +3,14 @@
   "version": "2.0.0",
   "description": "Salary converter",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "lint": "./node_modules/.bin/eslint src/"
   },
   "author": "Stanislav Botev",
   "license": "MIT",
   "dependencies": {
+    "papercss": "^1.4.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   },

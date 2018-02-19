@@ -1,22 +1,41 @@
 {
-  "name": "webpackbin-project",
-  "version": "1.0.0",
-  "description": "Project boilerplate",
+  "name": "salary-converter",
+  "version": "2.0.0",
+  "description": "Salary converter",
   "scripts": {
-    "start": "webpack-dev-server --content-base build/ --port 3000"
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "lint": "./node_modules/.bin/eslint src/"
   },
+  "author": "Stanislav Botev",
+  "license": "MIT",
   "dependencies": {
-    "axios": "0.17.1",
-    "vue": "2.5.13"
+    "papercss": "^1.4.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
-    "html-webpack-plugin": "2.30.1",
-    "webpack-dev-server": "2.9.7",
-    "webpack": "^3.10.0",
-    "babel-core": "^6.23.1",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015": "^6.22.0"
-  },
-  "author": "WebpackBin",
-  "license": "ISC"
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.15.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-array-func": "^3.0.0",
+    "eslint-plugin-flowtype": "^2.41.0",
+    "eslint-plugin-flowtype-errors": "^3.3.7",
+    "eslint-plugin-immutable": "^1.0.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.5.0",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-react": "^7.5.1",
+    "eslint-plugin-standard": "^3.0.1",
+    "eslint-plugin-unicorn": "^3.0.1",
+    "flow-bin": "^0.63.1",
+    "parcel-bundler": "^1.4.1"
+  }
 }
